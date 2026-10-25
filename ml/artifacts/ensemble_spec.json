@@ -1,0 +1,84 @@
+{
+  "version": "ensemble-v1",
+  "columns": [
+    "grade_CS201",
+    "grade_CS230",
+    "grade_CS320",
+    "grade_ST210",
+    "grade_CS350",
+    "skill_count_software",
+    "skill_count_data",
+    "skill_count_infrastructure",
+    "skill_count_security",
+    "skill_count_hardware",
+    "skill_count_management",
+    "skill_level_software",
+    "skill_level_data",
+    "skill_level_infrastructure",
+    "skill_level_security",
+    "skill_level_hardware",
+    "skill_level_management",
+    "exp_sessions",
+    "exp_interactions",
+    "exp_distinct_items",
+    "exp_mean_duration",
+    "fes_current",
+    "fes_trend",
+    "year",
+    "pref_software",
+    "pref_data",
+    "pref_infrastructure",
+    "pref_security",
+    "pref_hardware",
+    "pref_management"
+  ],
+  "classes": [
+    "data",
+    "hardware",
+    "infrastructure",
+    "management",
+    "security",
+    "software"
+  ],
+  "metrics": {
+    "n_students": 200,
+    "n_test": 40,
+    "with_preferences": {
+      "accuracy": 0.95,
+      "macro_f1": 0.9522588522588524,
+      "log_loss": 0.23042796913930602
+    },
+    "without_preferences": {
+      "accuracy": 0.35,
+      "macro_f1": 0.26044657097288676,
+      "log_loss": 1.7680028656715314
+    }
+  },
+  "config": {
+    "base_learners": [
+      "random_forest",
+      "gradient_boosting",
+      "mlp"
+    ],
+    "meta_learner": "logistic_regression",
+    "cv_folds": 5,
+    "include_preferences": true,
+    "test_size": 0.2,
+    "random_state": 42,
+    "random_forest": {
+      "n_estimators": 300
+    },
+    "gradient_boosting": {
+      "n_estimators": 200
+    },
+    "mlp": {
+      "hidden_layer_sizes": [
+        64,
+        32
+      ],
+      "max_iter": 500,
+      "early_stopping": true
+    }
+  },
+  "saved_at": "2026-09-29T14:29:15.850523"
+}

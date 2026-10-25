@@ -22,9 +22,10 @@ frontend/.env.local
 data/oulad/raw/
 # Regenerable simulation report (recreate with `make simulate-fes-html`)
 frontend/public/fes-simulation.html
-ml/artifacts/*.pt
-ml/artifacts/*.json
-ml/artifacts/*.joblib
+# Trained model artifacts ARE committed so a clone serves identical
+# predictions without retraining (see README "Reproducibility"). Only ad-hoc
+# evaluation runs stay out of git.
+ml/artifacts/_sensitivity_*
 *.ckpt
 
 # OS / editor

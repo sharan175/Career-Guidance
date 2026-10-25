@@ -2,8 +2,10 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { endpoints } from "@/lib/api/client";
+import { careerSlug } from "@/lib/roadmap/slug";
 import { useTracking } from "@/lib/tracking/TrackingProvider";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
@@ -152,7 +154,12 @@ export default function RecommendationsPage() {
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-center gap-2">
                     <h2 className="text-lg font-semibold text-white">
-                      {rec.name}
+                      <Link
+                        href={`/roadmap/${careerSlug(rec.name)}`}
+                        className="transition-colors hover:text-teal-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400"
+                      >
+                        {rec.name}
+                      </Link>
                     </h2>
 
                     <span className="rounded-md border border-violet-500/30 bg-violet-500/10 px-2 py-1 text-xs font-medium text-violet-300">
@@ -295,6 +302,13 @@ export default function RecommendationsPage() {
                       ? "Explaining…"
                       : "Why this?"}
                   </Button>
+
+                  <Link
+                    href={`/roadmap/${careerSlug(rec.name)}`}
+                    className="inline-flex items-center justify-center gap-1 rounded-lg border border-slate-700 bg-slate-800 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:border-slate-600 hover:bg-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400"
+                  >
+                    View Roadmap <span aria-hidden="true">→</span>
+                  </Link>
                 </div>
               </div>
             </Card>

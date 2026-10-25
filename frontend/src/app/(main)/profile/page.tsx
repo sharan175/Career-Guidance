@@ -58,8 +58,8 @@ export default function ProfilePage() {
       setYear(data.year_of_study ?? 3);
       setLoadError(null);
       setNeedsLogin(false);
-    } catch (err: any) {
-      if (err?.response?.status === 401) {
+    } catch (err) {
+      if ((err as { response?: { status?: number } })?.response?.status === 401) {
         setNeedsLogin(true);
       } else {
         setLoadError("Could not load your profile. Try refreshing the page.");
@@ -95,9 +95,12 @@ export default function ProfilePage() {
       setProfile((prev) => (prev ? { ...prev, ...data } : data));
       setSaveState("saved");
       setTimeout(() => setSaveState("idle"), 2000);
-    } catch (err: any) {
+    } catch (err) {
       setSaveState("error");
-      setSaveError(err?.response?.data?.detail ?? "Could not save changes.");
+      setSaveError(
+        (err as { response?: { data?: { detail?: string } } })?.response?.data
+          ?.detail ?? "Could not save changes."
+      );
     }
   };
 

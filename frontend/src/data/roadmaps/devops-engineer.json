@@ -1,0 +1,294 @@
+{
+  "slug": "devops-engineer",
+  "title": "DevOps Engineer",
+  "description": "Automate everything: Linux, networking, CI/CD, containers, IaC, observability, and reliability.",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "sec-fundamentals",
+      "kind": "section",
+      "label": "Fundamentals",
+      "lane": "spine"
+    },
+    {
+      "id": "linux",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Linux & the Command Line",
+      "description": "Nearly every server you will touch runs Linux. Get comfortable in a terminal.",
+      "resources": [
+        { "title": "LinuxCommand.org", "url": "https://linuxcommand.org/", "type": "article", "free": true },
+        { "title": "Ubuntu Docs — Server documentation", "url": "https://ubuntu.com/server/docs", "type": "official", "free": true },
+        { "title": "OverTheWire — Bandit (shell practice)", "url": "https://overthewire.org/wargames/bandit/", "type": "practice", "free": true }
+      ]
+    },
+    {
+      "id": "shell-scripting",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "linux",
+      "label": "Shell Scripting",
+      "resources": [
+        { "title": "Bash Guide (Greg's Wiki)", "url": "https://mywiki.wooledge.org/BashGuide", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "networking",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Networking",
+      "description": "DNS, HTTP, TLS, and firewalls. Debugging starts here.",
+      "resources": [
+        { "title": "Cloudflare Learning Center", "url": "https://www.cloudflare.com/learning/", "type": "article", "free": true },
+        { "title": "MDN — An Overview of HTTP", "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "git",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Git & GitHub",
+      "description": "Branching strategies and pull-request workflows.",
+      "resources": [
+        { "title": "Pro Git Book (free)", "url": "https://git-scm.com/book/en/v2", "type": "book", "free": true },
+        { "title": "GitHub Docs", "url": "https://docs.github.com/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "programming",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Programming & Scripting",
+      "description": "Python or Go for tooling; you will write a lot of glue code.",
+      "resources": [
+        { "title": "Python Official Tutorial", "url": "https://docs.python.org/3/tutorial/", "type": "official", "free": true },
+        { "title": "Go — Effective Go", "url": "https://go.dev/doc/effective_go", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "info-projects-1",
+      "kind": "info",
+      "lane": "spine",
+      "label": "Beginner Project Ideas",
+      "description": "Provision a VM and harden it, write a backup cron job, build a status page, or automate a deployment with a shell script.",
+      "resources": [
+        { "title": "Roadmap.sh — DevOps", "url": "https://roadmap.sh/devops", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "sec-cicd",
+      "kind": "section",
+      "label": "CI/CD & Automation",
+      "lane": "spine"
+    },
+    {
+      "id": "cicd",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "CI/CD Pipelines",
+      "description": "Build, test, and deploy automatically on every change.",
+      "resources": [
+        { "title": "GitHub Actions Documentation", "url": "https://docs.github.com/en/actions", "type": "official", "free": true },
+        { "title": "GitLab CI/CD Docs", "url": "https://docs.gitlab.com/ee/ci/", "type": "official", "free": true },
+        { "title": "Jenkins Documentation", "url": "https://www.jenkins.io/doc/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "cicd-concepts",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "cicd",
+      "label": "Pipelines, Artifacts & Releases",
+      "resources": [
+        { "title": "GitHub Actions — Workflow Syntax", "url": "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "iac",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Infrastructure as Code",
+      "description": "Declare infrastructure in version-controlled files.",
+      "resources": [
+        { "title": "Terraform Tutorials (HashiCorp)", "url": "https://developer.hashicorp.com/terraform/tutorials", "type": "official", "free": true },
+        { "title": "Ansible Documentation", "url": "https://docs.ansible.com/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "terraform",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "iac",
+      "label": "Terraform",
+      "resources": [
+        { "title": "Terraform Documentation", "url": "https://developer.hashicorp.com/terraform/docs", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "sec-containers",
+      "kind": "section",
+      "label": "Containers & Orchestration",
+      "lane": "spine"
+    },
+    {
+      "id": "docker",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Docker",
+      "description": "Images, volumes, networking, and multi-stage builds.",
+      "resources": [
+        { "title": "Docker — Get Started", "url": "https://docs.docker.com/get-started/", "type": "official", "free": true },
+        { "title": "Docker — Best Practices for image size", "url": "https://docs.docker.com/build/building/best-practices/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "kubernetes",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Kubernetes",
+      "description": "The de-facto standard for container orchestration.",
+      "resources": [
+        { "title": "Kubernetes — Tutorials", "url": "https://kubernetes.io/docs/tutorials/", "type": "official", "free": true },
+        { "title": "Kubernetes — Documentation", "url": "https://kubernetes.io/docs/home/", "type": "official", "free": true },
+        { "title": "Interactive Kubernetes Tutorials (KodeKloud)", "url": "https://kodekloud.com/", "type": "practice", "free": false }
+      ]
+    },
+    {
+      "id": "k8s-workloads",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "kubernetes",
+      "label": "Deployments, Services & Ingress",
+      "resources": [
+        { "title": "Kubernetes — Deployments", "url": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "sec-cloud",
+      "kind": "section",
+      "label": "Cloud",
+      "lane": "spine"
+    },
+    {
+      "id": "cloud-provider",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Learn One Cloud Deeply",
+      "description": "Pick AWS, Azure, or GCP and get certified on one before touching the others.",
+      "resources": [
+        { "title": "AWS — Getting Started", "url": "https://aws.amazon.com/getting-started/", "type": "official", "free": true },
+        { "title": "Google Cloud — Training", "url": "https://cloud.google.com/training", "type": "official", "free": true },
+        { "title": "Azure — Documentation", "url": "https://learn.microsoft.com/azure/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "networking-cloud",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "cloud-provider",
+      "label": "VPCs, Load Balancers & DNS",
+      "resources": [
+        { "title": "AWS — VPC Documentation", "url": "https://docs.aws.amazon.com/vpc/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "sec-observability",
+      "kind": "section",
+      "label": "Observability & Reliability",
+      "lane": "spine"
+    },
+    {
+      "id": "logging",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Logging",
+      "description": "Structured logs and a way to search them.",
+      "resources": [
+        { "title": "ELK Stack Documentation", "url": "https://www.elastic.co/guide/", "type": "official", "free": true },
+        { "title": "Loki Documentation", "url": "https://grafana.com/docs/loki/latest/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "metrics-monitoring",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Metrics & Monitoring",
+      "description": "Prometheus for metrics, dashboards for humans, alerts for action.",
+      "resources": [
+        { "title": "Prometheus Documentation", "url": "https://prometheus.io/docs/introduction/overview/", "type": "official", "free": true },
+        { "title": "Grafana Documentation", "url": "https://grafana.com/docs/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "alerting-slos",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "metrics-monitoring",
+      "label": "Alerting & SLOs",
+      "resources": [
+        { "title": "Google SRE Book (free)", "url": "https://sre.google/sre-book/table-of-contents/", "type": "book", "free": true }
+      ]
+    },
+    {
+      "id": "security",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Security & Secrets",
+      "description": "Least privilege, secret management, and supply-chain basics.",
+      "resources": [
+        { "title": "OWASP — Top Ten", "url": "https://owasp.org/www-project-top-ten/", "type": "official", "free": true },
+        { "title": "HashiCorp Vault Documentation", "url": "https://developer.hashicorp.com/vault/docs", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "pick-track",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Go Deeper",
+      "resources": []
+    },
+    {
+      "id": "link-cloud-architect",
+      "kind": "roadmapLink",
+      "lane": "right",
+      "parentId": "pick-track",
+      "label": "Cloud Architect",
+      "linkTo": "cloud-architect"
+    },
+    {
+      "id": "link-software-eng",
+      "kind": "roadmapLink",
+      "lane": "right",
+      "parentId": "pick-track",
+      "label": "Software Engineer",
+      "linkTo": "software-engineer"
+    },
+    {
+      "id": "sec-projects",
+      "kind": "section",
+      "label": "Projects & Practice",
+      "lane": "spine"
+    },
+    {
+      "id": "homelab",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Homelab / Cloud Project",
+      "description": "Deploy a real stack end to end: containerised app on Kubernetes with CI/CD, metrics, and alerts.",
+      "resources": [
+        { "title": "Kubernetes — Get Started", "url": "https://kubernetes.io/docs/setup/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "certification",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Certification (optional)",
+      "description": "A cert won't replace experience, but it opens doors.",
+      "resources": [
+        { "title": "AWS Certified Solutions Architect", "url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/", "type": "official", "free": false }
+      ]
+    }
+  ],
+  "edges": []
+}

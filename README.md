@@ -85,8 +85,9 @@ docker compose -f infra/docker-compose.yml run --rm web python /app/data/seeds/s
 
 Then open http://localhost:3000 (frontend) and http://localhost:8000/api/v1/ (API).
 The images bake in `careermind_ml`/`careermind_llm` (editable) and the trained
-artifacts under `ml/artifacts/` — run `make train-fes train-fm train-dqn
-train-ensemble` on the host first if they are missing, then rebuild.
+artifacts under `ml/artifacts/` (committed to the repo — see
+[Reproducibility](#reproducibility)); retrain with `make train-fes train-fm
+train-dqn train-ensemble` only if you change the models, then rebuild.
 
 ### Option B — Run locally, module by module
 
@@ -224,6 +225,50 @@ Paper constants (EngagementSignal thresholds, ≥8-session calibration rule, 10k
 replay buffer, target-network sync every 100 steps, Eq. 3 reward weights) live in
 `ml/configs/*.yaml`.
 
+## Reproducibility
+
+First run on a fresh clone:
+
+```bash
+cp .env.example .env                      # LLM_API_KEY optional (Part A degrades without it)
+docker run -d -p 27017:27017 mongo:7
+docker run -d -p 6379:6379 redis:7-alpine
+make seed                                 # deterministic: --seed 42 by default
+cd backend && python manage.py runserver  # :8000
+cd frontend && npm install && npm run dev # :3000
+```
+
+**Identical to this machine:**
+
+- **Data** — `make seed` defaults to `--seed 42`, so the knowledge graph, demo
+  quizzes, simulated students/sessions/events and the FES population weights
+  come out byte-identical.
+- **Model outputs** — the trained artifacts are committed
+  (`ml/artifacts/ensemble.joblib`, `fm.pt`, `dqn.pt` + their `*_spec.json` /
+  `dqn_training.json`), so career prediction, recommendations and the RL action
+  endpoint serve the same scores with **no torch install and no training**.
+  They contain only model weights, feature schema and aggregate statistics —
+  no PII, no secrets. Treat any change to them in review like a code change
+  (they are pickle-based and executed on load).
+- **Static roadmaps** — `frontend/src/data/roadmaps/*.json` (zod-validated) and
+  frontend deps via the committed `frontend/package-lock.json`.
+
+**Differs:**
+
+- **LLM text** — roadmap generation, quiz generation and "Why this?" answers
+  depend on your `LLM_API_KEY`, the provider and model version; wording varies
+  run to run. Without a key those endpoints return 503 and the UI degrades
+  gracefully.
+- **Python dependencies** — `backend/requirements.txt` and the `ml` /
+  `llm_gateway` pyprojects declare version *ranges*, not a lockfile, so a clone
+  may resolve newer minor versions than the ones used here.
+- **Retraining** — `make train-*` rewrites the artifacts. The ensemble is
+  sklearn with `random_state: 42` (near-identical), while torch training
+  (FM, DQN) varies slightly across platforms and versions.
+- **Regenerable/downloaded files** — `frontend/public/fes-simulation.html`
+  (`make simulate-fes-html`) and `data/oulad/raw/` (`python
+  data/oulad/download.py`) are gitignored on purpose.
+
 ## Roadmap (implementation phases)
 
 0. **Skeleton** — structure, stubs, docker-compose, seed data
@@ -244,3 +289,164 @@ replay buffer, target-network sync every 100 steps, Eq. 3 reward weights) live i
     pass
 
 See `docs/architecture.md` for the component/data-flow diagram (Fig. 1).
+
+## Career Roadmaps (frontend)
+
+The roadmap.sh-style **Career Roadmaps** feature lives entirely in the frontend
+and is JSON-driven. Progress is stored in `localStorage` behind a swappable
+storage abstraction (`frontend/src/lib/roadmap/storage.ts`), so a backend
+endpoint can be dropped in later without touching any component.
+
+### Routes & integration
+
+- `/roadmap/:careerSlug` — the interactive flowchart (client route:
+  `frontend/src/app/(main)/roadmap/[slug]/page.tsx`).
+- **Recommendations** — each career name and its "View Roadmap →" action link to
+  `/roadmap/<slugify(career name)>` (see `frontend/src/lib/roadmap/slug.ts`).
+- **Dashboard** — a "My Roadmaps" section reads the same progress store, so the
+  roadmap page and dashboard can never disagree (single source of truth:
+  `frontend/src/lib/roadmap/ProgressStore.tsx`).
+
+### Adding a new career roadmap
+
+Only the **content** is authored as JSON; registering it is one mechanical line.
+
+1. **Create the file** `frontend/src/data/roadmaps/<slug>.json`, where `<slug>`
+   is `slugify(career name)` exactly as the API returns it — e.g. `Data
+   Engineer` → `data-engineer.json`, `AR/VR Developer` → `ar-vr-developer.json`.
+
+2. **Register it** in `frontend/src/lib/roadmap/registry.ts` with two lines — an
+   import and an entry in the `RAW` array:
+
+   ```ts
+   import dataEngineer from "@/data/roadmaps/data-engineer.json";
+   // ...
+   const RAW = [ /* ...existing... */, dataEngineer ];
+   ```
+
+3. **Validate.** `npm run build` (or `npm run dev`) validates the file with zod
+   at load. In development a bad file throws loudly with the exact zod issue; in
+   production it is dropped and the route shows a friendly error instead of
+   crashing the app.
+
+Any career without a roadmap file automatically shows the "Roadmap coming soon"
+fallback page, so you never have to add them all at once.
+
+### JSON shape
+
+```jsonc
+{
+  "slug": "data-engineer",            // must equal the file name
+  "title": "Data Engineer",
+  "description": "One-line overview.",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "sql",                     // stable, unique (progress keys off this)
+      "kind": "topic",                 // topic | section | info | roadmapLink
+      "lane": "spine",                 // spine | left | right
+      "label": "SQL",
+      "description": "Shown in the detail drawer.",
+      "parentId": "databases",         // optional; groups under a spine node
+      "resources": [
+        { "title": "PostgreSQL Docs",
+          "url": "https://www.postgresql.org/docs/",
+          "type": "official",          // course|official|video|article|book|practice
+          "free": true }
+      ]
+    }
+  ],
+  "edges": []                          // optional; connectors are derived from lanes
+}
+```
+
+**Node kinds**
+
+- `topic` — a progress-bearing node (`lane: "spine"` = yellow main path,
+  `lane: "left" | "right"` = tan sub-topic beside the spine).
+- `section` — a plain text label row (e.g. "Advanced").
+- `info` — a reusable `InfoCard`: light box with guidance text and a grey
+  button (taken from its first resource).
+- `roadmapLink` — a solid blue node linking to another roadmap via `linkTo`.
+
+**Rules enforced by the schema (`frontend/src/types/roadmap.ts`)**
+
+- Node ids must be unique and stable; `parentId` and `edges` must reference ids
+  that exist.
+- Resource URLs must be valid `http(s)`.
+- Aim for **40–80 nodes** covering fundamentals → tools → advanced →
+  specialization → projects, with 2–6 real resources per topic.
+
+**Progress:** `done / (total topic nodes − skipped)`. Section, info and
+roadmapLink nodes never count. Progress entries pointing at node ids that no
+longer exist are ignored, so bumping `version` never breaks saved progress.
+
+### Feature flag
+
+The AI Tutor (drawer tab + floating pill) is a stub behind
+`NEXT_PUBLIC_AI_TUTOR=true`. Everything else works with the flag off.
+
+### AI-generated roadmaps (Google Gemini)
+
+Careers without a curated JSON file can still get a roadmap: the app asks
+**Google Gemini** (through the existing `careermind_llm` gateway) to build one
+on demand and saves it to the user's Dashboard.
+
+**Entry points**
+
+- `/roadmap/:slug` for a career with no seed data shows the request box
+  (pre-filled from the slug) instead of the plain "coming soon" card.
+- **Dashboard → My Roadmaps** has a request box (prominent when empty,
+  "Request another roadmap" when cards exist). Type any career name.
+
+**Flow**
+
+1. `POST /api/v1/roadmaps/generate { career, context? }` (JWT required) calls
+   `careermind_llm.roadmapgen.generate_roadmap()` — the Gemini adapter with
+   the same quota-failover chain as chat/quiz (`LLM_FALLBACK_MODELS`).
+2. The model returns a *simplified* payload (sections → topics → subtopics +
+   resources). `build_roadmap()` converts it to the full schema
+   deterministically: unique ids, alternating `left`/`right` lanes, clamped
+   sizes (8 sections / 10 topics / 5 subtopics / 6 resources), http(s)-only
+   resource URLs, unknown types coerced to `article`. `edges` stays empty —
+   connectors are derived from lanes at render time, like the seed files.
+3. The roadmap is persisted per-student in Mongo (`generated_roadmaps`,
+   unique per `(student, slug)` — regenerating replaces) and returned to the
+   client, which mirrors it into `localStorage`
+   (`cm_generated_roadmaps_v1`, zod-validated on read and write).
+4. `getRoadmap()` in `registry.ts` falls back to that store, so the canvas,
+   drawer, progress store and dashboard all render generated roadmaps with
+   **zero component changes**.
+
+**Related endpoints** (all JWT-scoped to the owning student)
+
+| Method | Path | Purpose |
+| --- | --- | --- |
+| POST | `/api/v1/roadmaps/generate` | Generate/replace a roadmap (400 validation, 503 no `LLM_API_KEY`, 502 provider failure, 429 throttled) |
+| GET | `/api/v1/roadmaps/mine` | List the student's generated roadmaps (newest first, capped at 50) |
+| GET | `/api/v1/roadmaps/:slug` | Fetch one; **404** for slugs the student does not own |
+
+**Configuration** — uses the existing `LLM_API_KEY` (and `LLM_MODEL` when it
+names a Gemini model). Optional override for the generation model only:
+
+```bash
+ROADMAP_LLM_MODEL=gemini-3.5-flash   # defaults to gemini-3.5-flash
+```
+
+**Client store** — `frontend/src/lib/roadmap/generated.ts`: in-memory cache
+backed by `localStorage`, corrupt/invalid entries dropped on read, and a
+`useGeneratedRoadmaps()` subscription so pages re-render the moment a roadmap
+is generated or restored from another device.
+
+**Known caveats**
+
+- Generated resource links are **not verified to resolve** — they are
+  shape-validated only (http(s) + known type). They come straight from the
+  model.
+- Generation requires login (roadmaps are stored per-student); offline/401
+  states show a friendly message.
+- Seeded roadmaps always win over a generated one with the same slug.
+- Dashboard *membership* is progress-driven per device: a roadmap generated on
+  another device is fetched into the store when you open the Dashboard or the
+  roadmap URL, but it only gains a card there once opened (progress itself is
+  still localStorage-only behind the `ProgressAdapter` abstraction).

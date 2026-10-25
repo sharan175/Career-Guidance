@@ -1,0 +1,269 @@
+{
+  "slug": "tech-product-manager",
+  "title": "Tech Product Manager",
+  "description": "Product sense, user research, prioritisation, delivery, and data-informed decision making for technical products.",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "sec-foundations",
+      "kind": "section",
+      "label": "Foundations",
+      "lane": "spine"
+    },
+    {
+      "id": "role",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Understand the PM Role",
+      "description": "You own the 'why' and 'what'; engineering owns the 'how'. Influence without authority.",
+      "resources": [
+        { "title": "Silicon Valley Product Group (Marty Cagan)", "url": "https://www.svpg.com/", "type": "article", "free": true },
+        { "title": "Lenny's Newsletter — Product Management", "url": "https://www.lennysnewsletter.com/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "product-sense",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Product Sense",
+      "description": "Good judgement about what to build and why, built from real user contact.",
+      "resources": [
+        { "title": "Inspired — Marty Cagan (site)", "url": "https://www.svpg.com/books/", "type": "book", "free": false },
+        { "title": "The Mom Test (site)", "url": "https://themomtestbook.com/", "type": "book", "free": false }
+      ]
+    },
+    {
+      "id": "user-research",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "User Research",
+      "description": "Interviews, usability tests, and turning qualitative signal into decisions.",
+      "resources": [
+        { "title": "Nielsen Norman Group — Articles", "url": "https://www.nngroup.com/articles/", "type": "article", "free": true },
+        { "title": "Interviewing Users (Interaction Design Foundation)", "url": "https://www.interaction-design.org/", "type": "course", "free": false }
+      ]
+    },
+    {
+      "id": "jtbd",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "user-research",
+      "label": "Jobs-to-be-Done",
+      "resources": [
+        { "title": "JTBD — Intercom", "url": "https://www.intercom.com/books/jobs-to-be-done", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "personas-problems",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "user-research",
+      "label": "Personas & Problem Framing",
+      "resources": [
+        { "title": "Continuous Discovery Habits (site)", "url": "https://continuousdiscoveryhabits.com/", "type": "book", "free": false }
+      ]
+    },
+    {
+      "id": "tech-literacy",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Technical Literacy",
+      "description": "Enough engineering fluency to scope realistically and earn engineer trust.",
+      "resources": [
+        { "title": "ByteByteGo — System Design", "url": "https://bytebytego.com/", "type": "course", "free": false },
+        { "title": "freeCodeCamp — Full Stack Curriculum", "url": "https://www.freecodecamp.org/learn/", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "info-projects-1",
+      "kind": "info",
+      "lane": "spine",
+      "label": "Practice Project Ideas",
+      "description": "Write a PRD for an app you use, run five user interviews, or redesign a broken onboarding flow and defend the changes.",
+      "resources": [
+        { "title": "GitHub — Product Requirement Doc examples", "url": "https://github.com/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "sec-strategy",
+      "kind": "section",
+      "label": "Strategy & Prioritisation",
+      "lane": "spine"
+    },
+    {
+      "id": "strategy",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Product Strategy",
+      "description": "Where to play and how to win. Vision, positioning, and a coherent roadmap.",
+      "resources": [
+        { "title": "SVPG — Product Strategy", "url": "https://www.svpg.com/product-strategy/", "type": "article", "free": true },
+        { "title": "Good Strategy Bad Strategy (site)", "url": "https://www.goodstrategybadstrategy.com/", "type": "book", "free": false }
+      ]
+    },
+    {
+      "id": "prioritisation",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Prioritisation Frameworks",
+      "description": "RICE, ICE, Kano, and opportunity scoring — tools for saying no.",
+      "resources": [
+        { "title": "Intercom — RICE Prioritisation", "url": "https://www.intercom.com/blog/rice-simple-prioritization-method-you-probably-havent-heard-of/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "metrics",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Product Metrics",
+      "description": "North-star metric, activation, retention, and the difference between vanity and actionable.",
+      "resources": [
+        { "title": "Lenny's Newsletter — Metrics", "url": "https://www.lennysnewsletter.com/", "type": "article", "free": true },
+        { "title": "Amplitude — Product Analytics guides", "url": "https://amplitude.com/blog", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "north-star",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "metrics",
+      "label": "North Star & Funnels",
+      "resources": [
+        { "title": "Amplitude — North Star Playbook", "url": "https://amplitude.com/north-star", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "experimentation",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "metrics",
+      "label": "A/B Testing & Experimentation",
+      "resources": [
+        { "title": "Evan Miller — A/B Testing", "url": "https://www.evanmiller.org/ab-testing/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "sec-delivery",
+      "kind": "section",
+      "label": "Execution & Delivery",
+      "lane": "spine"
+    },
+    {
+      "id": "prd",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "PRDs & Requirements",
+      "description": "Problem, goals, non-goals, and success criteria — clear enough to build from.",
+      "resources": [
+        { "title": "SVPG — Writing Product Requirements", "url": "https://www.svpg.com/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "agile",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Agile & Delivery",
+      "description": "Scrum and Kanban as tools, not religion. Ship small, ship often.",
+      "resources": [
+        { "title": "Atlassian — Agile Coach", "url": "https://www.atlassian.com/agile", "type": "article", "free": true },
+        { "title": "Scrum Guide (official)", "url": "https://scrumguides.org/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "roadmapping",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "agile",
+      "label": "Roadmapping & Stakeholders",
+      "resources": [
+        { "title": "ProductPlan — Roadmapping guides", "url": "https://www.productplan.com/learn/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "design-collab",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Working with Design",
+      "description": "Wireframes, prototypes, and design critique.",
+      "resources": [
+        { "title": "Figma — Learn", "url": "https://help.figma.com/hc/en-us", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "sec-growth",
+      "kind": "section",
+      "label": "Growth & Communication",
+      "lane": "spine"
+    },
+    {
+      "id": "growth",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Growth Loops & Pricing",
+      "description": "Acquisition, activation, retention, revenue, referral — and how to price.",
+      "resources": [
+        { "title": "Reforge — Growth studies", "url": "https://www.reforge.com/", "type": "course", "free": false }
+      ]
+    },
+    {
+      "id": "communication",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Communication & Influence",
+      "description": "Write clearly, present simply, and align people who disagree.",
+      "resources": [
+        { "title": "Writing Well (Paul Graham)", "url": "https://paulgraham.com/writing.html", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "pick-track",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Go Deeper",
+      "resources": []
+    },
+    {
+      "id": "link-fullstack",
+      "kind": "roadmapLink",
+      "lane": "right",
+      "parentId": "pick-track",
+      "label": "Full-Stack Developer",
+      "linkTo": "full-stack-developer"
+    },
+    {
+      "id": "link-data-scientist",
+      "kind": "roadmapLink",
+      "lane": "right",
+      "parentId": "pick-track",
+      "label": "Data Scientist",
+      "linkTo": "data-scientist"
+    },
+    {
+      "id": "sec-projects",
+      "kind": "section",
+      "label": "Portfolio & Interviews",
+      "lane": "spine"
+    },
+    {
+      "id": "case-studies",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Write Case Studies",
+      "description": "Show your reasoning: problem, options, decision, outcome. This is your portfolio.",
+      "resources": [
+        { "title": "Lenny's Newsletter — PM Interview prep", "url": "https://www.lennysnewsletter.com/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "mock-interviews",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Practice Product Interviews",
+      "description": "Product sense, execution, and strategy questions — practise out loud.",
+      "resources": [
+        { "title": "Exponent — PM Interview Practice", "url": "https://www.tryexponent.com/", "type": "practice", "free": false }
+      ]
+    }
+  ],
+  "edges": []
+}

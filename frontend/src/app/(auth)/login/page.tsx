@@ -36,17 +36,22 @@ export default function LoginPage() {
       const { data } = await endpoints.auth.login(email.trim(), password);
       storeTokens(data.access, data.refresh);
       router.push("/dashboard");
-    } catch (err: any) {
-      const status = err?.response?.status;
+    } catch (err) {
+      const apiErr = err as {
+        response?: { status?: number; data?: { detail?: string } };
+      };
+      const status = apiErr?.response?.status;
       if (status === 401) {
         setFormError("Incorrect email or password.");
       } else if (status === 429) {
         setFormError(
-          err?.response?.data?.detail ??
+          apiErr?.response?.data?.detail ??
             "Too many failed attempts. Try again in a few minutes."
         );
       } else {
-        setFormError(err?.response?.data?.detail ?? "Something went wrong. Please try again.");
+        setFormError(
+          apiErr?.response?.data?.detail ?? "Something went wrong. Please try again."
+        );
       }
     } finally {
       setBusy(false);

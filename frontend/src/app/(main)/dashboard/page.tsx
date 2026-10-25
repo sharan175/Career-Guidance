@@ -7,6 +7,7 @@ import { endpoints, isLoggedIn } from "@/lib/api/client";
 import { Card } from "@/components/ui/Card";
 import { ScoreRing } from "@/components/ui/ScoreRing";
 import { FesReportLink } from "@/components/FesReportLink";
+import { MyRoadmaps } from "@/components/roadmap/MyRoadmaps";
 
 const SUBMETRICS = [
   { key: "tcr", label: "Task Completion Rate (TCR)", activity: "task" },
@@ -111,6 +112,10 @@ export default function DashboardPage() {
             to track your own sessions and see your personal FES.
           </p>
         )}
+
+        <Card title="My Roadmaps" className={cardStyle}>
+          <MyRoadmaps />
+        </Card>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           <Card

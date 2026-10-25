@@ -72,8 +72,14 @@ export default function RegisterPage() {
       });
       storeTokens(data.access, data.refresh);
       router.push("/dashboard");
-    } catch (err: any) {
-      const data = err?.response?.data;
+    } catch (err) {
+      const data = (
+        err as {
+          response?: {
+            data?: { detail?: string; [field: string]: string[] | string | undefined };
+          };
+        }
+      )?.response?.data;
       const errors: FieldErrors = {};
       if (data && typeof data === "object" && !data.detail) {
         // DRF field-keyed validation errors: {email: ["Enter a valid email address."]}

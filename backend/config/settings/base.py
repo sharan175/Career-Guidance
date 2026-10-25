@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "apps.recommendations",
     "apps.rl_feedback",
     "apps.llm_proxy",
+    "apps.roadmaps",
 ]
 
 MIDDLEWARE = [

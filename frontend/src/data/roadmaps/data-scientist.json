@@ -1,0 +1,264 @@
+{
+  "slug": "data-scientist",
+  "title": "Data Scientist",
+  "description": "From programming and statistics to machine learning, experimentation, and communicating insight.",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "sec-fundamentals",
+      "kind": "section",
+      "label": "Fundamentals",
+      "lane": "spine"
+    },
+    {
+      "id": "python",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Python for Data Science",
+      "description": "The default language for analysis, modelling, and productionising data work.",
+      "resources": [
+        { "title": "Python Official Tutorial", "url": "https://docs.python.org/3/tutorial/", "type": "official", "free": true },
+        { "title": "freeCodeCamp — Data Analysis with Python", "url": "https://www.freecodecamp.org/learn/data-analysis-with-python/", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "python-core",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "python",
+      "label": "Python Basics & Pandas",
+      "resources": [
+        { "title": "pandas Documentation", "url": "https://pandas.pydata.org/docs/", "type": "official", "free": true },
+        { "title": "Corey Schafer — Pandas Tutorials", "url": "https://www.youtube.com/@coreyms", "type": "video", "free": true }
+      ]
+    },
+    {
+      "id": "sql",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "SQL & Data Wrangling",
+      "description": "Most data science starts with pulling and shaping data in SQL.",
+      "resources": [
+        { "title": "Mode — SQL Tutorial", "url": "https://mode.com/sql-tutorial/", "type": "article", "free": true },
+        { "title": "SQLBolt", "url": "https://sqlbolt.com/", "type": "article", "free": true },
+        { "title": "PostgreSQL Documentation", "url": "https://www.postgresql.org/docs/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "statistics",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Statistics & Probability",
+      "description": "Distributions, hypothesis testing, confidence intervals, and regression — the backbone of the field.",
+      "resources": [
+        { "title": "Khan Academy — Statistics & Probability", "url": "https://www.khanacademy.org/math/statistics-probability", "type": "course", "free": true },
+        { "title": "StatQuest with Josh Starmer", "url": "https://www.youtube.com/@statquest", "type": "video", "free": true },
+        { "title": "Seeing Theory (Brown University)", "url": "https://seeing-theory.brown.edu/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "distributions-tests",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "statistics",
+      "label": "Distributions & Hypothesis Tests",
+      "resources": [
+        { "title": "StatQuest — p-values", "url": "https://www.youtube.com/@statquest", "type": "video", "free": true }
+      ]
+    },
+    {
+      "id": "info-projects-1",
+      "kind": "info",
+      "lane": "spine",
+      "label": "Beginner Project Ideas",
+      "description": "Exploratory analysis on a public dataset, an A/B test write-up, a survey analysis, or a simple predictive model with a notebook and blog post.",
+      "resources": [
+        { "title": "Kaggle Datasets", "url": "https://www.kaggle.com/datasets", "type": "practice", "free": true }
+      ]
+    },
+    {
+      "id": "sec-ml",
+      "kind": "section",
+      "label": "Machine Learning",
+      "lane": "spine"
+    },
+    {
+      "id": "ml-fundamentals",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Machine Learning Fundamentals",
+      "description": "Supervised vs unsupervised, train/test splits, overfitting, and evaluation metrics.",
+      "resources": [
+        { "title": "Google — Machine Learning Crash Course", "url": "https://developers.google.com/machine-learning/crash-course", "type": "course", "free": true },
+        { "title": "Andrew Ng — Machine Learning (Coursera)", "url": "https://www.coursera.org/learn/machine-learning", "type": "course", "free": false },
+        { "title": "scikit-learn User Guide", "url": "https://scikit-learn.org/stable/user_guide.html", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "regression-classification",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "ml-fundamentals",
+      "label": "Regression & Classification",
+      "resources": [
+        { "title": "scikit-learn — Supervised Learning", "url": "https://scikit-learn.org/stable/supervised_learning.html", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "clustering",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "ml-fundamentals",
+      "label": "Clustering & Dimensionality Reduction",
+      "resources": [
+        { "title": "scikit-learn — Unsupervised Learning", "url": "https://scikit-learn.org/stable/modules/clustering.html", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "feature-eng",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Feature Engineering",
+      "description": "Encode, scale, and select features — usually more impactful than the algorithm choice.",
+      "resources": [
+        { "title": "scikit-learn — Preprocessing Data", "url": "https://scikit-learn.org/stable/modules/preprocessing.html", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "model-eval",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Model Evaluation & Tuning",
+      "description": "Cross-validation, leakage, and hyperparameter search.",
+      "resources": [
+        { "title": "scikit-learn — Model Evaluation", "url": "https://scikit-learn.org/stable/modules/model_evaluation.html", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "sec-deep-learning",
+      "kind": "section",
+      "label": "Deep Learning",
+      "lane": "spine"
+    },
+    {
+      "id": "deep-learning",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Deep Learning",
+      "description": "Neural networks, backprop, and modern architectures.",
+      "resources": [
+        { "title": "DeepLearning.AI Specialization (Coursera)", "url": "https://www.coursera.org/specializations/deep-learning", "type": "course", "free": false },
+        { "title": "fast.ai — Practical Deep Learning", "url": "https://course.fast.ai/", "type": "course", "free": true },
+        { "title": "3Blue1Brown — Neural Networks", "url": "https://www.3blue1brown.com/topics/neural-networks", "type": "video", "free": true }
+      ]
+    },
+    {
+      "id": "nlp-cv",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "deep-learning",
+      "label": "NLP & Computer Vision",
+      "resources": [
+        { "title": "Hugging Face — NLP Course", "url": "https://huggingface.co/learn/nlp-course", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "sec-tools",
+      "kind": "section",
+      "label": "Tools & Communication",
+      "lane": "spine"
+    },
+    {
+      "id": "visualization",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Data Visualization",
+      "description": "Charts that communicate. A picture is worth a thousand p-values.",
+      "resources": [
+        { "title": "Matplotlib Documentation", "url": "https://matplotlib.org/stable/", "type": "official", "free": true },
+        { "title": " seaborn Documentation", "url": "https://seaborn.pydata.org/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "notebooks",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "visualization",
+      "label": "Notebooks & Jupyter",
+      "resources": [
+        { "title": "Jupyter Documentation", "url": "https://docs.jupyter.org/en/latest/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "experimentation",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Experimentation & A/B Testing",
+      "description": "Power, sample size, and reading results honestly.",
+      "resources": [
+        { "title": "Evan Miller — A/B Testing Tools", "url": "https://www.evanmiller.org/ab-testing/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "storytelling",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Storytelling with Data",
+      "description": "Turn analysis into decisions. The most underrated skill in the field.",
+      "resources": [
+        { "title": "Storytelling with Data (site)", "url": "https://www.storytellingwithdata.com/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "pick-track",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Go Deeper",
+      "resources": []
+    },
+    {
+      "id": "link-ml-eng",
+      "kind": "roadmapLink",
+      "lane": "right",
+      "parentId": "pick-track",
+      "label": "Machine Learning Engineer",
+      "linkTo": "machine-learning-engineer"
+    },
+    {
+      "id": "link-data-eng",
+      "kind": "roadmapLink",
+      "lane": "right",
+      "parentId": "pick-track",
+      "label": "Data Engineer",
+      "linkTo": "data-engineer"
+    },
+    {
+      "id": "sec-projects",
+      "kind": "section",
+      "label": "Projects & Portfolio",
+      "lane": "spine"
+    },
+    {
+      "id": "kaggle",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Kaggle Competitions",
+      "description": "Compete, read winning notebooks, and learn the craft by imitation.",
+      "resources": [
+        { "title": "Kaggle Learn", "url": "https://www.kaggle.com/learn", "type": "course", "free": true },
+        { "title": "Kaggle Competitions", "url": "https://www.kaggle.com/competitions", "type": "practice", "free": true }
+      ]
+    },
+    {
+      "id": "portfolio",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Portfolio & Blog",
+      "description": "Publish notebooks and write-ups so your thinking is visible.",
+      "resources": [
+        { "title": "Kaggle Notebooks", "url": "https://www.kaggle.com/code", "type": "practice", "free": true }
+      ]
+    }
+  ],
+  "edges": []
+}

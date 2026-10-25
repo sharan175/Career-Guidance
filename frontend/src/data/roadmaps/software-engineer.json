@@ -1,0 +1,526 @@
+{
+  "slug": "software-engineer",
+  "title": "Software Engineer",
+  "description": "A beginner-to-advanced path covering programming fundamentals, core computer science, engineering practice, and system design.",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "sec-fundamentals",
+      "kind": "section",
+      "label": "Fundamentals",
+      "lane": "spine"
+    },
+    {
+      "id": "pick-language",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Pick a Programming Language",
+      "description": "Choose one general-purpose language and learn it deeply before branching out. Any of these will carry you through a full career.",
+      "resources": [
+        { "title": "Python Official Tutorial", "url": "https://docs.python.org/3/tutorial/", "type": "official", "free": true },
+        { "title": "JavaScript Guide (MDN)", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide", "type": "official", "free": true },
+        { "title": "The Java Tutorials", "url": "https://docs.oracle.com/javase/tutorial/", "type": "official", "free": true },
+        { "title": "C++ Tutorials ( learncpp.com )", "url": "https://www.learncpp.com/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "lang-python",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "pick-language",
+      "label": "Python",
+      "description": "Readable, versatile, and the default for scripting, data, and ML. Great first language.",
+      "resources": [
+        { "title": "Python Official Tutorial", "url": "https://docs.python.org/3/tutorial/", "type": "official", "free": true },
+        { "title": "Corey Schafer — Python Tutorials", "url": "https://www.youtube.com/@coreyms", "type": "video", "free": true }
+      ]
+    },
+    {
+      "id": "lang-javascript",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "pick-language",
+      "label": "JavaScript / TypeScript",
+      "description": "The language of the web, front to back. Add TypeScript for type safety.",
+      "resources": [
+        { "title": "The Modern JavaScript Tutorial", "url": "https://javascript.info/", "type": "article", "free": true },
+        { "title": "TypeScript Handbook", "url": "https://www.typescriptlang.org/docs/handbook/intro.html", "type": "official", "free": true },
+        { "title": "freeCodeCamp — JavaScript Algorithms", "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "lang-java",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "pick-language",
+      "label": "Java",
+      "description": "Verbose but foundational for enterprise systems and a common interview language.",
+      "resources": [
+        { "title": "The Java Tutorials", "url": "https://docs.oracle.com/javase/tutorial/", "type": "official", "free": true },
+        { "title": "MOOC Java Programming", "url": "https://java-programming.mooc.fi/", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "lang-cpp",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "pick-language",
+      "label": "C / C++",
+      "description": "Close to the metal. Choose this for systems, game engines, or embedded work.",
+      "resources": [
+        { "title": "learncpp.com", "url": "https://www.learncpp.com/", "type": "article", "free": true },
+        { "title": "C++ Documentation (cppreference)", "url": "https://en.cppreference.com/w/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "programming-fundamentals",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Programming Fundamentals",
+      "description": "Master the constructs every language shares. These transfer everywhere.",
+      "resources": [
+        { "title": "CS50x — Introduction to Computer Science", "url": "https://cs50.harvard.edu/x/", "type": "course", "free": true },
+        { "title": "freeCodeCamp — Learn to Code", "url": "https://www.freecodecamp.org/learn/", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "variables-types",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "programming-fundamentals",
+      "label": "Variables, Types & Operators",
+      "resources": [
+        { "title": "JavaScript Guide — Values, Variables (MDN)", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "control-flow",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "programming-fundamentals",
+      "label": "Control Flow & Loops",
+      "resources": [
+        { "title": "MDN — Control Flow and Error Handling", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "functions",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "programming-fundamentals",
+      "label": "Functions & Scope",
+      "resources": [
+        { "title": "MDN — Functions", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "oop",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "programming-fundamentals",
+      "label": "Object-Oriented Programming",
+      "description": "Classes, inheritance, encapsulation, and polymorphism — plus when NOT to use them.",
+      "resources": [
+        { "title": "OOP in Python (Real Python)", "url": "https://realpython.com/python3-object-oriented-programming/", "type": "article", "free": true },
+        { "title": "Refactoring Guru — Design Patterns", "url": "https://refactoring.guru/design-patterns", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "dsa",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Data Structures & Algorithms",
+      "description": "The core of technical interviews and of writing efficient code.",
+      "resources": [
+        { "title": "freeCodeCamp — DSA (JavaScript)", "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/", "type": "course", "free": true },
+        { "title": "MIT 6.006 — Introduction to Algorithms (OCW)", "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/", "type": "course", "free": true },
+        { "title": "VisuAlgo — Visualising Algorithms", "url": "https://visualgo.net/en", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "arrays-strings",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "dsa",
+      "label": "Arrays, Strings & Hash Maps",
+      "resources": [
+        { "title": "LeetCode — Top Interview 150", "url": "https://leetcode.com/studyplan/top-interview-150/", "type": "practice", "free": true }
+      ]
+    },
+    {
+      "id": "linked-lists",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "dsa",
+      "label": "Linked Lists, Stacks & Queues",
+      "resources": [
+        { "title": "LeetCode — Linked List Study Plan", "url": "https://leetcode.com/studyplan/linked-list/", "type": "practice", "free": true }
+      ]
+    },
+    {
+      "id": "trees-graphs",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "dsa",
+      "label": "Trees, Heaps & Graphs",
+      "description": "Traversal, shortest paths, and topological sort show up constantly.",
+      "resources": [
+        { "title": "MIT 6.006 — Graph Algorithms (OCW)", "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/", "type": "course", "free": true },
+        { "title": "NeetCode — Graphs Course", "url": "https://neetcode.io/courses", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "sorting-searching",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "dsa",
+      "label": "Sorting & Searching",
+      "resources": [
+        { "title": "VisuAlgo — Sorting", "url": "https://visualgo.net/en/sorting", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "git",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Version Control with Git",
+      "description": "Non-negotiable for any team. Learn the mental model, not just the commands.",
+      "resources": [
+        { "title": "Pro Git Book (free)", "url": "https://git-scm.com/book/en/v2", "type": "book", "free": true },
+        { "title": "Git Official Documentation", "url": "https://git-scm.com/doc", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "git-basics",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "git",
+      "label": "Commits, Staging & History",
+      "resources": [
+        { "title": "GitHub — Git & GitHub for Beginners", "url": "https://docs.github.com/en/get-started", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "git-branching",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "git",
+      "label": "Branching & Merging",
+      "description": "Feature branches, pull requests, and resolving conflicts.",
+      "resources": [
+        { "title": "GitHub — About Branches", "url": "https://docs.github.com/en/get-started/using-github/about-branches", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "databases",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Databases & SQL",
+      "description": "Most applications are only as good as their data layer.",
+      "resources": [
+        { "title": "PostgreSQL Tutorial (official docs)", "url": "https://www.postgresql.org/docs/current/tutorial.html", "type": "official", "free": true },
+        { "title": "SQLBolt — Interactive SQL Lessons", "url": "https://sqlbolt.com/", "type": "article", "free": true },
+        { "title": "Mode — SQL Tutorial", "url": "https://mode.com/sql-tutorial/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "sql-basics",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "databases",
+      "label": "SELECT, JOINs & Aggregation",
+      "resources": [
+        { "title": "SQLBolt", "url": "https://sqlbolt.com/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "schema-design",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "databases",
+      "label": "Schema Design & Normalization",
+      "resources": [
+        { "title": "Database Design Course (freeCodeCamp)", "url": "https://www.freecodecamp.org/news/database-design-course/", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "indexing",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "databases",
+      "label": "Indexing & Query Plans",
+      "description": "Read an EXPLAIN plan before you add a cache.",
+      "resources": [
+        { "title": "Use The Index, Luke", "url": "https://use-the-index-luke.com/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "info-projects-1",
+      "kind": "info",
+      "lane": "spine",
+      "label": "Beginner Project Ideas",
+      "description": "Build to learn: a todo app with a REST API, a CLI file-organiser, a markdown note-taking app, or a small expense tracker with a database.",
+      "resources": [
+        { "title": "Project Ideas (freeCodeCamp)", "url": "https://www.freecodecamp.org/news/java-project-ideas/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "sec-core",
+      "kind": "section",
+      "label": "Core Engineering",
+      "lane": "spine"
+    },
+    {
+      "id": "operating-systems",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Operating Systems",
+      "description": "How programs actually run: processes, memory, and files.",
+      "resources": [
+        { "title": "OSTEP — Operating Systems: Three Easy Pieces (free)", "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/", "type": "book", "free": true },
+        { "title": "MIT 6.S081 — Operating System Engineering (OCW)", "url": "https://ocw.mit.edu/courses/6-s081-operating-system-engineering-fall-2020/", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "processes-memory",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "operating-systems",
+      "label": "Processes, Threads & Memory",
+      "resources": [
+        { "title": "OSTEP — Processes & Threads (free)", "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/", "type": "book", "free": true }
+      ]
+    },
+    {
+      "id": "networks",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Computer Networks",
+      "description": "Understand HTTP, DNS, and TCP so debugging stops being guesswork.",
+      "resources": [
+        { "title": "Computer Networking: A Top-Down Approach (site)", "url": "https://gaia.cs.umass.edu/kurose_ross/index.php", "type": "book", "free": false },
+        { "title": "MDN — An Overview of HTTP", "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "http-tcp-dns",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "networks",
+      "label": "HTTP, TCP/IP & DNS",
+      "resources": [
+        { "title": "MDN — How the Web Works", "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "design",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Software Design & Architecture",
+      "description": "Structure code so it stays changeable as it grows.",
+      "resources": [
+        { "title": "Refactoring Guru — Design Patterns", "url": "https://refactoring.guru/design-patterns", "type": "article", "free": true },
+        { "title": "SOLID Principles (Uncle Bob)", "url": "https://en.wikipedia.org/wiki/SOLID", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "solid-patterns",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "design",
+      "label": "SOLID & Design Patterns",
+      "resources": [
+        { "title": "Refactoring Guru", "url": "https://refactoring.guru/design-patterns", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "api-design",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "design",
+      "label": "REST API Design",
+      "resources": [
+        { "title": "Microsoft REST API Guidelines", "url": "https://github.com/microsoft/api-guidelines", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "testing",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Testing",
+      "description": "Tests are a design tool as much as a safety net.",
+      "resources": [
+        { "title": "Python — unittest documentation", "url": "https://docs.python.org/3/library/unittest.html", "type": "official", "free": true },
+        { "title": "Vitest — Testing Framework", "url": "https://vitest.dev/guide/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "unit-integration",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "testing",
+      "label": "Unit & Integration Tests",
+      "resources": [
+        { "title": "TestDriven.io — Practical Testing", "url": "https://testdriven.io/", "type": "course", "free": false }
+      ]
+    },
+    {
+      "id": "build-ci",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Build Tools & CI",
+      "description": "Automate the path from commit to production.",
+      "resources": [
+        { "title": "GitHub Actions Documentation", "url": "https://docs.github.com/en/actions", "type": "official", "free": true },
+        { "title": "npm Docs", "url": "https://docs.npmjs.com/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "sec-advanced",
+      "kind": "section",
+      "label": "Advanced",
+      "lane": "spine"
+    },
+    {
+      "id": "system-design",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "System Design",
+      "description": "Design systems that scale: storage, caching, queues, and trade-offs.",
+      "resources": [
+        { "title": "System Design Primer (GitHub)", "url": "https://github.com/donnemartin/system-design-primer", "type": "article", "free": true },
+        { "title": "AWS — Architecture Center", "url": "https://aws.amazon.com/architecture/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "scaling-caching",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "system-design",
+      "label": "Scalability, Caching & Load Balancing",
+      "resources": [
+        { "title": "System Design Primer", "url": "https://github.com/donnemartin/system-design-primer", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "queues",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "system-design",
+      "label": "Message Queues & Async",
+      "resources": [
+        { "title": "Apache Kafka — Introduction", "url": "https://kafka.apache.org/intro", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "concurrency",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Concurrency & Parallelism",
+      "description": "Write correct concurrent code — and know why most bugs happen.",
+      "resources": [
+        { "title": "Python — asyncio documentation", "url": "https://docs.python.org/3/library/asyncio.html", "type": "official", "free": true },
+        { "title": "Go — Effective Go (Concurrency)", "url": "https://go.dev/doc/effective_go#concurrency", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "security",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Security Fundamentals",
+      "description": "Auth, validation, and the classic vulnerability classes.",
+      "resources": [
+        { "title": "OWASP Top Ten", "url": "https://owasp.org/www-project-top-ten/", "type": "official", "free": true },
+        { "title": "MDN — Web Security", "url": "https://developer.mozilla.org/en-US/docs/Web/Security", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "auth-sessions",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "security",
+      "label": "Auth, Sessions & JWT",
+      "resources": [
+        { "title": "OWASP Authentication Cheat Sheet", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "sec-specialize",
+      "kind": "section",
+      "label": "Specialize",
+      "lane": "spine"
+    },
+    {
+      "id": "pick-track",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Pick a Track",
+      "description": "Go deeper in one direction. Each link opens a dedicated roadmap.",
+      "resources": []
+    },
+    {
+      "id": "link-fullstack",
+      "kind": "roadmapLink",
+      "lane": "right",
+      "parentId": "pick-track",
+      "label": "Full-Stack Developer",
+      "linkTo": "full-stack-developer"
+    },
+    {
+      "id": "link-devops",
+      "kind": "roadmapLink",
+      "lane": "right",
+      "parentId": "pick-track",
+      "label": "DevOps Engineer",
+      "linkTo": "devops-engineer"
+    },
+    {
+      "id": "link-ml",
+      "kind": "roadmapLink",
+      "lane": "right",
+      "parentId": "pick-track",
+      "label": "Machine Learning Engineer",
+      "linkTo": "machine-learning-engineer"
+    },
+    {
+      "id": "sec-projects",
+      "kind": "section",
+      "label": "Projects & Portfolio",
+      "lane": "spine"
+    },
+    {
+      "id": "build-projects",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Build Real Projects",
+      "description": "Employers hire proof of work. Ship three projects you can talk about in depth.",
+      "resources": [
+        { "title": "The Odin Project — Full Stack Curriculum", "url": "https://www.theodinproject.com/", "type": "course", "free": true },
+        { "title": "Frontend Mentor", "url": "https://www.frontendmentor.io/", "type": "practice", "free": true }
+      ]
+    },
+    {
+      "id": "interview-prep",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Interview Preparation",
+      "description": "Practice problems and mock system-design interviews.",
+      "resources": [
+        { "title": "LeetCode", "url": "https://leetcode.com/", "type": "practice", "free": true },
+        { "title": "NeetCode 150", "url": "https://neetcode.io/practice", "type": "practice", "free": true },
+        { "title": "HackerRank", "url": "https://www.hackerrank.com/", "type": "practice", "free": true }
+      ]
+    },
+    {
+      "id": "portfolio",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Resume & Portfolio",
+      "description": "A clear GitHub profile, a strong README, and a short technical blog go a long way.",
+      "resources": [
+        { "title": "GitHub — Profile README", "url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme", "type": "official", "free": true }
+      ]
+    }
+  ],
+  "edges": []
+}

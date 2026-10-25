@@ -10,4 +10,5 @@ urlpatterns = [
     path("api/v1/recommendations/", include("apps.recommendations.urls")),
     path("api/v1/rl/", include("apps.rl_feedback.urls")),
     path("api/v1/llm/", include("apps.llm_proxy.urls")),
+    path("api/v1/roadmaps/", include("apps.roadmaps.urls")),
 ]

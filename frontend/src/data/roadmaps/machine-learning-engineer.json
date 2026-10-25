@@ -1,0 +1,253 @@
+{
+  "slug": "machine-learning-engineer",
+  "title": "Machine Learning Engineer",
+  "description": "Productionise ML: strong Python and math, modelling, training pipelines, serving, and monitoring.",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "sec-fundamentals",
+      "kind": "section",
+      "label": "Fundamentals",
+      "lane": "spine"
+    },
+    {
+      "id": "python",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Advanced Python",
+      "description": "Type hints, packaging, profiling, and writing code that survives a production codebase.",
+      "resources": [
+        { "title": "Python Documentation", "url": "https://docs.python.org/3/", "type": "official", "free": true },
+        { "title": "Real Python — Type Hints", "url": "https://realpython.com/python-type-checking/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "math",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Math for ML",
+      "description": "Linear algebra, calculus, and probability — enough to read a paper and debug a loss.",
+      "resources": [
+        { "title": "3Blue1Brown — Essence of Linear Algebra", "url": "https://www.3blue1brown.com/topics/linear-algebra", "type": "video", "free": true },
+        { "title": "Khan Academy — Multivariable Calculus", "url": "https://www.khanacademy.org/math/multivariable-calculus", "type": "course", "free": true },
+        { "title": "Mathematics for Machine Learning (book)", "url": "https://mml-book.github.io/", "type": "book", "free": true }
+      ]
+    },
+    {
+      "id": "ml-core",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Classical Machine Learning",
+      "description": "Trees, ensembles, linear models, and the bias-variance trade-off.",
+      "resources": [
+        { "title": "scikit-learn User Guide", "url": "https://scikit-learn.org/stable/user_guide.html", "type": "official", "free": true },
+        { "title": "Andrew Ng — Machine Learning (Coursera)", "url": "https://www.coursera.org/learn/machine-learning", "type": "course", "free": false },
+        { "title": "Google — Machine Learning Crash Course", "url": "https://developers.google.com/machine-learning/crash-course", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "trees-ensembles",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "ml-core",
+      "label": "Trees, Boosting & Ensembles",
+      "resources": [
+        { "title": "XGBoost Documentation", "url": "https://xgboost.readthedocs.io/en/stable/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "deep-learning",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Deep Learning",
+      "description": "CNNs, transformers, and the training tricks that make them work.",
+      "resources": [
+        { "title": "DeepLearning.AI Specialization (Coursera)", "url": "https://www.coursera.org/specializations/deep-learning", "type": "course", "free": false },
+        { "title": "fast.ai — Practical Deep Learning", "url": "https://course.fast.ai/", "type": "course", "free": true },
+        { "title": "CS231n — CNNs for Visual Recognition", "url": "https://cs231n.github.io/", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "transformers",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "deep-learning",
+      "label": "Transformers & LLMs",
+      "resources": [
+        { "title": "Hugging Face — NLP Course", "url": "https://huggingface.co/learn/nlp-course", "type": "course", "free": true },
+        { "title": "Attention Is All You Need (paper)", "url": "https://arxiv.org/abs/1706.03762", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "frameworks",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "ML Frameworks",
+      "description": "Pick a primary framework and know the other one exists.",
+      "resources": [
+        { "title": "PyTorch Tutorials", "url": "https://pytorch.org/tutorials/", "type": "official", "free": true },
+        { "title": "TensorFlow Tutorials", "url": "https://www.tensorflow.org/tutorials", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "info-projects-1",
+      "kind": "info",
+      "lane": "spine",
+      "label": "Beginner Project Ideas",
+      "description": "Train a classifier and ship it behind an API, build a recommender, fine-tune a small transformer, or reproduce a paper's baseline.",
+      "resources": [
+        { "title": "Kaggle Competitions", "url": "https://www.kaggle.com/competitions", "type": "practice", "free": true }
+      ]
+    },
+    {
+      "id": "sec-mlops",
+      "kind": "section",
+      "label": "MLOps & Production",
+      "lane": "spine"
+    },
+    {
+      "id": "data-pipelines",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Data & Feature Pipelines",
+      "description": "Reliable training data: validation, versioning, and feature stores.",
+      "resources": [
+        { "title": "Great Expectations Documentation", "url": "https://docs.greatexpectations.io/", "type": "official", "free": true },
+        { "title": "Feast — Feature Store", "url": "https://docs.feast.dev/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "experiment-tracking",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "data-pipelines",
+      "label": "Experiment Tracking",
+      "resources": [
+        { "title": "MLflow Documentation", "url": "https://mlflow.org/docs/latest/index.html", "type": "official", "free": true },
+        { "title": "Weights & Biases Docs", "url": "https://docs.wandb.ai/", "type": "official", "free": false }
+      ]
+    },
+    {
+      "id": "training-infra",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Training Infrastructure",
+      "description": "Distributed training, GPUs, and reproducible environments.",
+      "resources": [
+        { "title": "PyTorch — Distributed Training", "url": "https://pytorch.org/tutorials/intermediate/ddp_tutorial.html", "type": "official", "free": true },
+        { "title": "Ray Documentation", "url": "https://docs.ray.io/en/latest/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "serving",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Model Serving",
+      "description": "Batch, realtime, and streaming inference with low latency.",
+      "resources": [
+        { "title": "FastAPI Documentation", "url": "https://fastapi.tiangolo.com/", "type": "official", "free": true },
+        { "title": "TorchServe", "url": "https://pytorch.org/serve/", "type": "official", "free": true },
+        { "title": "BentoML Documentation", "url": "https://docs.bentoml.com/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "monitoring",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Monitoring & Drift",
+      "description": "Models decay silently. Watch data drift, prediction drift, and latency.",
+      "resources": [
+        { "title": "Evidently AI Documentation", "url": "https://docs.evidentlyai.com/", "type": "official", "free": true },
+        { "title": "Prometheus Documentation", "url": "https://prometheus.io/docs/introduction/overview/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "sec-infra",
+      "kind": "section",
+      "label": "Engineering & Infrastructure",
+      "lane": "spine"
+    },
+    {
+      "id": "docker",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Docker & Containers",
+      "description": "Ship the same environment everywhere.",
+      "resources": [
+        { "title": "Docker — Get Started", "url": "https://docs.docker.com/get-started/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "cloud",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Cloud & Managed ML",
+      "description": "GPU instances, managed training, and serverless inference.",
+      "resources": [
+        { "title": "AWS Machine Learning", "url": "https://aws.amazon.com/machine-learning/", "type": "official", "free": true },
+        { "title": "Google Cloud AI Platform", "url": "https://cloud.google.com/products/ai", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "data-eng-basics",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Data Engineering Basics",
+      "description": "Batch and stream processing you will depend on.",
+      "resources": [
+        { "title": "Apache Spark Documentation", "url": "https://spark.apache.org/docs/latest/", "type": "official", "free": true },
+        { "title": "Apache Kafka — Introduction", "url": "https://kafka.apache.org/intro", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "pick-track",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Go Deeper",
+      "resources": []
+    },
+    {
+      "id": "link-data-scientist",
+      "kind": "roadmapLink",
+      "lane": "right",
+      "parentId": "pick-track",
+      "label": "Data Scientist",
+      "linkTo": "data-scientist"
+    },
+    {
+      "id": "link-devops",
+      "kind": "roadmapLink",
+      "lane": "right",
+      "parentId": "pick-track",
+      "label": "DevOps Engineer",
+      "linkTo": "devops-engineer"
+    },
+    {
+      "id": "sec-projects",
+      "kind": "section",
+      "label": "Projects & Portfolio",
+      "lane": "spine"
+    },
+    {
+      "id": "end-to-end",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Ship an End-to-End Project",
+      "description": "Train, serve, monitor. The single most convincing portfolio piece.",
+      "resources": [
+        { "title": "Made With ML", "url": "https://madewithml.com/", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "read-papers",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Read Papers",
+      "description": "Start with classics and arXiv abstracts; you will need to keep up.",
+      "resources": [
+        { "title": "Papers with Code", "url": "https://paperswithcode.com/", "type": "article", "free": true }
+      ]
+    }
+  ],
+  "edges": []
+}

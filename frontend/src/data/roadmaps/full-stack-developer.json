@@ -1,0 +1,401 @@
+{
+  "slug": "full-stack-developer",
+  "title": "Full-Stack Developer",
+  "description": "End-to-end web development: HTML/CSS/JS, a frontend framework, APIs, databases, auth, testing, and deployment.",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "sec-web-basics",
+      "kind": "section",
+      "label": "Web Fundamentals",
+      "lane": "spine"
+    },
+    {
+      "id": "html",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Learn HTML",
+      "description": "Semantic markup is the foundation of every page you will ever build.",
+      "resources": [
+        { "title": "MDN — HTML: HyperText Markup Language", "url": "https://developer.mozilla.org/en-US/docs/Web/HTML", "type": "official", "free": true },
+        { "title": "freeCodeCamp — Responsive Web Design", "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "html-semantics",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "html",
+      "label": "Semantic Elements & Accessibility",
+      "resources": [
+        { "title": "MDN — HTML Elements Reference", "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "html-forms",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "html",
+      "label": "Forms & Validation",
+      "resources": [
+        { "title": "MDN — HTML Forms Guide", "url": "https://developer.mozilla.org/en-US/docs/Learn/Forms", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "css",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Learn CSS",
+      "description": "Layout, the box model, and responsive design. The hardest part of the front end for most people.",
+      "resources": [
+        { "title": "MDN — Cascading Style Sheets", "url": "https://developer.mozilla.org/en-US/docs/Web/CSS", "type": "official", "free": true },
+        { "title": "web.dev — Learn CSS", "url": "https://web.dev/learn/css/", "type": "article", "free": true },
+        { "title": "Flexbox Froggy", "url": "https://flexboxfroggy.com/", "type": "practice", "free": true },
+        { "title": "Grid Garden", "url": "https://cssgridgarden.com/", "type": "practice", "free": true }
+      ]
+    },
+    {
+      "id": "css-layout",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "css",
+      "label": "Flexbox & Grid",
+      "resources": [
+        { "title": "MDN — Basic Concepts of Flexbox", "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox", "type": "official", "free": true },
+        { "title": "MDN — CSS Grid Layout", "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "css-responsive",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "css",
+      "label": "Responsive Design",
+      "resources": [
+        { "title": "web.dev — Learn Responsive Design", "url": "https://web.dev/learn/design/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "javascript",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Learn JavaScript",
+      "description": "The language that runs in every browser and on the server.",
+      "resources": [
+        { "title": "The Modern JavaScript Tutorial", "url": "https://javascript.info/", "type": "article", "free": true },
+        { "title": "MDN — JavaScript Guide", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide", "type": "official", "free": true },
+        { "title": "freeCodeCamp — JavaScript Algorithms & Data Structures", "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "js-dom",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "javascript",
+      "label": "DOM Manipulation & Events",
+      "resources": [
+        { "title": "MDN — Document Object Model", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "js-async",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "javascript",
+      "label": "Async JS: Promises & fetch",
+      "resources": [
+        { "title": "MDN — Using the Fetch API", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch", "type": "official", "free": true },
+        { "title": "javascript.info — Promises, async/await", "url": "https://javascript.info/async", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "typescript",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Learn TypeScript",
+      "description": "Types catch a whole class of bugs before your users do.",
+      "resources": [
+        { "title": "TypeScript Handbook", "url": "https://www.typescriptlang.org/docs/handbook/intro.html", "type": "official", "free": true },
+        { "title": "TypeScript Playground", "url": "https://www.typescriptlang.org/play", "type": "practice", "free": true }
+      ]
+    },
+    {
+      "id": "info-frontend-projects",
+      "kind": "info",
+      "lane": "spine",
+      "label": "Beginner Project Ideas",
+      "description": "Build a static portfolio site, a recipe app, a weather dashboard, or a clone of a site you use daily.",
+      "resources": [
+        { "title": "Frontend Mentor", "url": "https://www.frontendmentor.io/", "type": "practice", "free": true }
+      ]
+    },
+    {
+      "id": "sec-frontend",
+      "kind": "section",
+      "label": "Frontend Framework",
+      "lane": "spine"
+    },
+    {
+      "id": "react",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Learn React",
+      "description": "Component model, hooks, and state — the most widely used frontend framework.",
+      "resources": [
+        { "title": "React — Official Tutorial", "url": "https://react.dev/learn", "type": "official", "free": true },
+        { "title": "Scrimba — Learn React", "url": "https://scrimba.com/learn/learnreact", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "react-state",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "react",
+      "label": "State & Data Fetching",
+      "resources": [
+        { "title": "TanStack Query Docs", "url": "https://tanstack.com/query/latest", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "nextjs",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Learn Next.js",
+      "description": "Routing, server components, and rendering strategies for production React apps.",
+      "resources": [
+        { "title": "Next.js — Learn Course", "url": "https://nextjs.org/learn", "type": "official", "free": true },
+        { "title": "Next.js Documentation", "url": "https://nextjs.org/docs", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "sec-backend",
+      "kind": "section",
+      "label": "Backend",
+      "lane": "spine"
+    },
+    {
+      "id": "node-express",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Node.js & Express",
+      "description": "Run JavaScript on the server and build REST APIs.",
+      "resources": [
+        { "title": "Node.js — Learn", "url": "https://nodejs.org/en/learn", "type": "official", "free": true },
+        { "title": "Express Documentation", "url": "https://expressjs.com/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "api-design",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "node-express",
+      "label": "REST API Design",
+      "resources": [
+        { "title": "Microsoft REST API Guidelines", "url": "https://github.com/microsoft/api-guidelines", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "validation",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "node-express",
+      "label": "Validation & Error Handling",
+      "resources": [
+        { "title": "Zod — TypeScript Schema Validation", "url": "https://zod.dev/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "databases",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Databases",
+      "description": "Relational for structure, document for flexibility — know both.",
+      "resources": [
+        { "title": "PostgreSQL Documentation", "url": "https://www.postgresql.org/docs/", "type": "official", "free": true },
+        { "title": "MongoDB Manual", "url": "https://www.mongodb.com/docs/manual/", "type": "official", "free": true },
+        { "title": "SQLBolt", "url": "https://sqlbolt.com/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "sql",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "databases",
+      "label": "SQL & Schema Design",
+      "resources": [
+        { "title": "Mode — SQL Tutorial", "url": "https://mode.com/sql-tutorial/", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "orm",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "databases",
+      "label": "ORMs & Migrations",
+      "resources": [
+        { "title": "Prisma Docs", "url": "https://www.prisma.io/docs", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "auth",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Authentication & Security",
+      "description": "Sessions, JWT, OAuth, and the OWASP basics.",
+      "resources": [
+        { "title": "OWASP — Authentication Cheat Sheet", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html", "type": "official", "free": true },
+        { "title": "Auth0 — OAuth 2.0 Overview", "url": "https://auth0.com/docs/get-started/authentication-and-authorization-flow", "type": "article", "free": true }
+      ]
+    },
+    {
+      "id": "sec-testing",
+      "kind": "section",
+      "label": "Testing & Quality",
+      "lane": "spine"
+    },
+    {
+      "id": "testing",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Testing",
+      "description": "Unit tests, integration tests, and end-to-end tests.",
+      "resources": [
+        { "title": "Vitest Documentation", "url": "https://vitest.dev/guide/", "type": "official", "free": true },
+        { "title": "Playwright Documentation", "url": "https://playwright.dev/docs/intro", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "linting",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "testing",
+      "label": "Linters & Formatters",
+      "resources": [
+        { "title": "ESLint Documentation", "url": "https://eslint.org/docs/latest/", "type": "official", "free": true },
+        { "title": "Prettier Documentation", "url": "https://prettier.io/docs/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "sec-devops",
+      "kind": "section",
+      "label": "Deployment & DevOps",
+      "lane": "spine"
+    },
+    {
+      "id": "git",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Git & GitHub Workflow",
+      "resources": [
+        { "title": "Pro Git Book (free)", "url": "https://git-scm.com/book/en/v2", "type": "book", "free": true },
+        { "title": "GitHub Docs", "url": "https://docs.github.com/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "hosting",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Hosting & Deployment",
+      "description": "Ship to a real URL with CI, environments, and a CDN.",
+      "resources": [
+        { "title": "Vercel Documentation", "url": "https://vercel.com/docs", "type": "official", "free": true },
+        { "title": "Netlify Documentation", "url": "https://docs.netlify.com/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "docker",
+      "kind": "topic",
+      "lane": "left",
+      "parentId": "hosting",
+      "label": "Docker Basics",
+      "resources": [
+        { "title": "Docker — Get Started", "url": "https://docs.docker.com/get-started/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "sec-advanced",
+      "kind": "section",
+      "label": "Advanced",
+      "lane": "spine"
+    },
+    {
+      "id": "performance",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Web Performance",
+      "description": "Core Web Vitals, caching, and bundle size.",
+      "resources": [
+        { "title": "web.dev — Learn Performance", "url": "https://web.dev/learn/performance", "type": "article", "free": true },
+        { "title": "MDN — Web Performance", "url": "https://developer.mozilla.org/en-US/docs/Web/Performance", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "a11y",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Accessibility (a11y)",
+      "description": "Keyboard navigation, ARIA, and screen readers.",
+      "resources": [
+        { "title": "web.dev — Learn Accessibility", "url": "https://web.dev/learn/accessibility/", "type": "article", "free": true },
+        { "title": "WAI-ARIA Authoring Practices", "url": "https://www.w3.org/WAI/ARIA/apg/", "type": "official", "free": true }
+      ]
+    },
+    {
+      "id": "pick-track",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Go Deeper",
+      "resources": []
+    },
+    {
+      "id": "link-software-eng",
+      "kind": "roadmapLink",
+      "lane": "right",
+      "parentId": "pick-track",
+      "label": "Software Engineer",
+      "linkTo": "software-engineer"
+    },
+    {
+      "id": "link-devops",
+      "kind": "roadmapLink",
+      "lane": "right",
+      "parentId": "pick-track",
+      "label": "DevOps Engineer",
+      "linkTo": "devops-engineer"
+    },
+    {
+      "id": "link-pm",
+      "kind": "roadmapLink",
+      "lane": "right",
+      "parentId": "pick-track",
+      "label": "Tech Product Manager",
+      "linkTo": "tech-product-manager"
+    },
+    {
+      "id": "sec-projects",
+      "kind": "section",
+      "label": "Projects & Portfolio",
+      "lane": "spine"
+    },
+    {
+      "id": "full-app",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Build a Full-Stack App",
+      "description": "Auth + CRUD + database + deployment. This is the project that proves you can do the job.",
+      "resources": [
+        { "title": "The Odin Project — Full Stack JavaScript", "url": "https://www.theodinproject.com/paths/full-stack-javascript", "type": "course", "free": true }
+      ]
+    },
+    {
+      "id": "portfolio",
+      "kind": "topic",
+      "lane": "spine",
+      "label": "Portfolio & Resume",
+      "resources": [
+        { "title": "GitHub — Profile README", "url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme", "type": "official", "free": true }
+      ]
+    }
+  ],
+  "edges": []
+}

@@ -162,10 +162,9 @@ export function TrackingProvider({ children }: { children: React.ReactNode }) {
     if (!isLoggedIn()) return;
 
     let cancelled = false;
-    let startTimer: ReturnType<typeof setTimeout> | undefined;
     // Debounced so StrictMode's synchronous remount cancels the timer before
     // any request is sent — no phantom session is created in dev.
-    startTimer = setTimeout(() => {
+    const startTimer = setTimeout(() => {
       if (cancelled) return;
       endpoints.collector
         .startSession()

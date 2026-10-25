@@ -140,4 +140,13 @@ export const endpoints = {
     quizGenerate: (payload: { skill: string; difficulty: number; n_items: number }) =>
       api.post("/api/v1/llm/quiz/generate", payload),
   },
+  roadmaps: {
+    /** Generate (or regenerate) a roadmap for a career with Gemini. */
+    generate: (career: string, context?: string) =>
+      api.post("/api/v1/roadmaps/generate", { career, context }),
+    /** The student's generated roadmaps (newest first, full payloads). */
+    mine: () => api.get("/api/v1/roadmaps/mine"),
+    /** One generated roadmap by slug (404 when not owned/absent). */
+    detail: (slug: string) => api.get(`/api/v1/roadmaps/${slug}`),
+  },
 };

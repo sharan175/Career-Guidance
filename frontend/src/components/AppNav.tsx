@@ -14,6 +14,7 @@ const NAV = [
   { href: "/prediction", label: "Career Prediction" },
   { href: "/quiz", label: "Quizzes" },
   { href: "/chat", label: "Guidance Chat" },
+  { href: "/resume", label: "Resume Analysis" },
   { href: "/profile", label: "Profile" },
 ];
 

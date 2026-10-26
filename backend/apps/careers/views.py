@@ -1,13 +1,14 @@
 """Career pathway catalogue + ensemble prediction APIs (paper FR08, Sec. V-D)."""
 from datetime import datetime
-
+import pypdf
 from mongoengine import connection
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
+from careermind_llm.resume_analyzer import analyze_resume_full
 import functools
-
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.parsers import MultiPartParser, FormParser
 from .models import CareerPathway, CareerPrediction
 
 _ensemble = None
@@ -169,3 +170,35 @@ class CareerPredictionView(APIView):
                 "predicted_at": doc.predicted_at.isoformat(),
             }
         )
+
+class ResumeAnalysisView(APIView):
+    permission_classes = [IsAuthenticated]
+    parser_classes = [MultiPartParser, FormParser]
+
+    def post(self, request):
+        file_obj = request.FILES.get("resume")
+        if not file_obj:
+            return Response({"detail": "No resume PDF provided."}, status=400)
+        # 1. Extract text from PDF
+        try:
+            reader = pypdf.PdfReader(file_obj)
+            resume_text = "".join(page.extract_text() or "" for page in reader.pages)
+        except Exception as e:
+            return Response({"detail": f"Could not read PDF: {str(e)}"}, status=400)
+        if len(resume_text.strip()) < 50:
+            return Response({"detail": "Uploaded PDF has insufficient text."}, status=400)
+        # 2. Extract inputs
+        pathway_id = request.data.get("pathway_id", "c01")
+        target_companies = request.data.get("target_companies", "")
+        specified_skills_raw = request.data.get("specified_skills", "")
+        specified_skills = [s.strip() for s in specified_skills_raw.split(",") if s.strip()]
+        pathway = CareerPathway.objects(external_id=pathway_id).first()
+        career_name = pathway.name if pathway else "Software Engineer"
+        # 3. Call AI Analyzer
+        analysis = analyze_resume_full(
+            resume_text=resume_text,
+            target_career=career_name,
+            specified_skills=specified_skills,
+            target_companies=target_companies,
+        )
+        return Response(analysis)

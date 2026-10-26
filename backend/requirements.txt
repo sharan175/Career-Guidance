@@ -17,3 +17,4 @@ openai>=1.30
 google-generativeai>=0.7
 pytest>=7.4
 pytest-django>=4.7
+pypdf>=4.0.0
